@@ -1,1 +1,8 @@
-pip install numpy flask pandas joblib tensorflow sklearn opencv-python matplotlib 
+numpy 
+flask 
+pandas 
+joblib 
+tensorflow 
+sklearn 
+opencv-python 
+matplotlib 

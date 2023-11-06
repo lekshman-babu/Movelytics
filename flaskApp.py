@@ -18,5 +18,5 @@ def main():
     predictedLabel=me.predict(path)
     return render_template('Index.html',predictedLabel=predictedLabel)
 
-if __name__=="__main__":
-    app.run(debug=True,host="localhost")
+# if __name__=="__main__":
+#     app.run(debug=True,host="localhost")

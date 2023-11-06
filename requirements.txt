@@ -6,4 +6,3 @@ tensorflow
 scikit-learn 
 opencv-python 
 matplotlib 
---upgarde pip

@@ -3,6 +3,6 @@ flask
 pandas 
 joblib 
 tensorflow 
-sklearn 
+scikit-learn 
 opencv-python 
 matplotlib 

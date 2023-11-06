@@ -3,7 +3,7 @@ import preProcessing as pp
 import numpy as np
 import keyVariables as kv
 
-model=joblib.load("movelytics84.75.pkl")
+model=joblib.load(filename="movelytics84.75.pkl")
 def predict(path):
     predictVideo=pp.preprocessor(path)
     allLabels=model.predict(np.expand_dims(predictVideo,axis=0))[0]

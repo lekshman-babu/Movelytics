@@ -5,6 +5,14 @@ import preProcessing as pp
 import matplotlib.pyplot as plt
 import numpy as np
 
+model=joblib.load("movelytics84.75.pkl")
+
+def predict(path):
+    predictVideo=pp.preprocessor(path)
+    allLabels=model.predict(np.expand_dims(predictVideo,axis=0))[0]
+    predictedIndex=np.argmax(allLabels)
+    predictedClass=kv.CLASS_LABLES[predictedIndex]
+    return predictedClass
 
 def summary():
     model.summary()

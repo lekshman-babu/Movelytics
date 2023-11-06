@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
-import modelEvaluation as me
+import modelPredict as mp
 app=Flask(__name__)
+
 
 @app.route('/')
 def home():
@@ -15,7 +16,7 @@ def main():
         return 'no video file selected'
     path='static/videos/'+video.filename
     video.save(path)
-    predictedLabel=me.predict(path)
+    predictedLabel=mp.predict(path)
     return render_template('Index.html',predictedLabel=predictedLabel)
 
 # if __name__=="__main__":

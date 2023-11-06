@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movelytics</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <h1>Upload Video</h1>
+    <form class="form" action="{{url_for('main')}}" method="post" enctype="multipart/form-data">
+      <input type="file" id="videoFile" name="video" accept="video/*" />
+        <video controls muted loop id="videoPlayer">
+          Your browser does not support the video tag.
+        </video>
+      <button type="submit">Submit</button>
+      <p id="output">{{predictedLabel}}</p>
+    </form>
+    <script>
+      document
+        .getElementById("videoFile")
+        .addEventListener("change", function (event) {
+          var videoPlayer = document.getElementById("videoPlayer");
+          var file = event.target.files[0];
+          var objectURL = URL.createObjectURL(file);
+          // videoPlayer.src = objectURL;
+          videoPlayer.innerHTML=`<source src="${objectURL}" type="video/mp4" />`
+        });
+    </script>
+  </body>
+</html>
